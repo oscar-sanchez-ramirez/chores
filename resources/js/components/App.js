@@ -8,3 +8,4 @@ const idElement = document.getElementById('App');
 if (idElement) {
     ReactDOM.render(<AppTest />, idElement);
 }
+
