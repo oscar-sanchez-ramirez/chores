@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import Button from '@material-ui/core/Button';
+import { SideBar } from './SideBar';
+
 
 
 export const AppTest = () => {
+
 
     const inicialState = 10;
 
@@ -44,14 +48,16 @@ export const AppTest = () => {
 
 
     return (
-        <div className="container mt-5">
-            <h4>React and Laravel</h4>
+        <div className="container">
+            <SideBar />
+            <br />
+            <h4 className="mt-5">React and Laravel</h4>
             <h4 className="text-info">{counter}</h4>
-            <button onClick={handleIncrement} className="btn btn-info">+1</button>
+            <Button variant="contained" color="primary" className="mt-2" onClick={handleIncrement} >+1</Button>
             <br />
-            <button onClick={handleDecrement} className="btn btn-success mt-4 mb-4">-1</button>
+            <Button variant="contained" color="primary" className="mt-2" onClick={handleDecrement} >-1</Button>
             <br />
-            <button onClick={handleReset} className="btn btn-primary">Reset</button>
+            <Button variant="contained" color="primary" className="mt-2" onClick={handleReset} >Reset</Button>
             {
                 shores.map((item, index) => (
                     <ul className="mt-5" key={index}>
@@ -61,4 +67,4 @@ export const AppTest = () => {
             }
         </div>
     )
-}
+}   
