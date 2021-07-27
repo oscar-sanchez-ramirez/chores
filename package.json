@@ -26,6 +26,8 @@
     },
     "dependencies": {
         "@material-ui/core": "^4.11.4",
-        "@material-ui/icons": "^4.11.2"
+        "@material-ui/icons": "^4.11.2",
+        "react-modal": "^3.14.3",
+        "react-router-dom": "^5.2.0"
     }
 }

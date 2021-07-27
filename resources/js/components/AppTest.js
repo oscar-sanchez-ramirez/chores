@@ -29,7 +29,7 @@ export const AppTest = () => {
     const fetchGet = () => {
 
         fetch('http://chores.com.net/api/chores')
-            .then(resp => resp.json())
+            .then(resp => resp.json)
             .then(data => {
                 setshores(data)
                 console.log(data)

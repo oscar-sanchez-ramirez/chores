@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DirectorioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::get('/chores', function () {
     $chores = ['React', 'Angular', 'VUE'];
     return $chores;
 });
+
+Route::apiResource('directorios', DirectorioController::class);

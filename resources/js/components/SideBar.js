@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar';
@@ -33,9 +35,20 @@ export const SideBar = () => {
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        Chores
-            </Typography>
+                    <Typography variant="h7" className={classes.title}>
+                    <Link
+                            to="/"
+                            className="text-white"
+                        >
+                            Inicio
+                        </Link>
+                        <Link
+                            to="/directories"
+                            className="text-white"
+                        >
+                            Directorios
+                        </Link>
+                    </Typography>
                     <Button color="inherit" >Login</Button>
                 </Toolbar>
             </AppBar>
