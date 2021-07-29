@@ -24,7 +24,7 @@ class CreateDirectorioRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|min:5|max:100',
+            'nombre' => 'required|min:3|max:100',
             'telefono' => 'required|unique:directorios'
         ];
     }

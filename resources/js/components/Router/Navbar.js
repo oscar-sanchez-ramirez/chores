@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-sm navbar-primary bg-light shadow-sm">
             <div className="container">
                 <Link
                     className="navbar-brand m2-4"
                     to="/"
                 >
-                    Inicio
+                   <i className="fa fa-home"></i> Inicio
                 </Link>
                 <Link
                     className="navbar-brand"
                     to="/directories"
                 >
-                    Directorios
+                  <i className="fa fa-address-card"></i>  Directorio
                 </Link>
 
 

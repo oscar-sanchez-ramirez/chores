@@ -25,3 +25,5 @@ Route::get('/chores', function () {
 });
 
 Route::apiResource('directorios', DirectorioController::class);
+
+Route::post('foto', [DirectorioController::class, 'foto'] );

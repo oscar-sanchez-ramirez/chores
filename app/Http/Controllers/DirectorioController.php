@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateDirectorioRequest;
 use Illuminate\Http\Request;
 use App\Models\Directorio;
 use PhpParser\Node\Scalar\MagicConst\Dir;
+use Symfony\Component\Console\Input\Input;
 
 class DirectorioController extends Controller
 {
@@ -27,9 +28,29 @@ class DirectorioController extends Controller
 
     public function cargarArchivo($file)
     {
+
         $nombreArchivo = time() . "." . $file->getClientOriginalExtension();
         $file->move(public_path('fotografias'), $nombreArchivo);
         return $nombreArchivo;
+    }
+
+    public function foto(Request $request)
+    {
+        if ($request->hasFile('foto')) {
+
+            $file = $request->file('foto');
+            $nombreArchivo = time() . "." . $file->getClientOriginalExtension();
+            $file->move(public_path('fotografias'), $nombreArchivo);
+            return response()->json([
+                'res' => true,
+                'message' => $nombreArchivo
+            ], 200);
+        } else {
+            return response()->json([
+                'res' => false,
+                'message' => $request
+            ], 200);
+        }
     }
 
 
@@ -74,7 +95,11 @@ class DirectorioController extends Controller
      */
     public function destroy($id)
     {
-        Directorio::destroy($id);
+
+        // Directorio::destroy($id);
+        $directorios = Directorio::find($id);
+        unlink(public_path().'/fotografias/'.$directorios->foto);
+        $directorios->delete();
         return response()->json([
             'res' => true,
             'message' => 'Registro eliminado correctamente'

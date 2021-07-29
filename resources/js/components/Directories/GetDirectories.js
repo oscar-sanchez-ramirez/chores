@@ -19,7 +19,7 @@ export const GetDirectories = () => {
 
     return (
         <div className="container mt-5">
-            <h1 className="text-center text-muted">Direcciones</h1>
+            <h1 className="text-center text-muted"><i className="fa fa-id-badge"></i> Contactos</h1>
             <hr />
             <div className="row">
                 <div className="col-md-6">
